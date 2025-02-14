@@ -27,20 +27,8 @@ const Navbar = ({ onToggleSidebar, isSidebarOpen }) => {
       >
         <AiOutlineMenuFold className="text-black hover:text-gray-700 text-xl font-thin" />
       </button>
-      <div className="">
-        <form className="">
-          <input
-            type="text"
-            className="bg-gray-100 focus:bg-gray-200 mx-1 px-3 py-1 border-b-[1px] border-b-black md:w-96 rounded-sm focus:outline-none focus:ring-0 "
-            placeholder="Enter here . . . ."
-          />
-        </form>
-      </div>
 
       <div className="flex items-center space-x-4 mr-4 z-10" ref={ dropdownRef } >
-        <button className="text-xl p-1 hover:bg-slate-300 rounded-full">
-          <BsBell />
-        </button>
         <div className="rounded-full" onClick={toggleDropdown}>
           <img
             src={" "}

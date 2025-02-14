@@ -32,9 +32,10 @@ const Sidebar = ({ isOpen }) => {
             Dashboard
           </NavLink>
         </li>
+
         <li className="">
           <NavLink
-            to="/admin/user-list"
+            to=""
             className={({ isActive }) =>
               `gap-x-4 font-normal block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
                 isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""
@@ -42,7 +43,21 @@ const Sidebar = ({ isOpen }) => {
             }
           >
             {/* <FaUsersLine className="text-xl" /> */}
-            Profile Management
+            vedios
+          </NavLink>
+        </li>
+
+        <li className="">
+          <NavLink
+            to=""
+            className={({ isActive }) =>
+              `gap-x-4 font-normal block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
+                isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""
+              }`
+            }
+          >
+            {/* <FaUsersLine className="text-xl" /> */}
+            Images
           </NavLink>
         </li>
       </ul>
