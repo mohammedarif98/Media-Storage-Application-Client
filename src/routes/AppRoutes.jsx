@@ -41,6 +41,7 @@ const UserRoutes = () => {
       {/* { !showNavbarAndSidebar &&( */}
         <Routes>
           <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Routes>
       {/* )} */}

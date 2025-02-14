@@ -9,22 +9,22 @@ import toast from "react-hot-toast";
 
 const RegisterForm = () => {
 
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm({ resolver: yupResolver(registerSchema) });
 
-  const navigate = useNavigate();
 
-  const onSubmit = async (data) => {
-    try {
+  const onSubmit = async(data) => {
+    try{
       const response = await registerUser(data);
       toast.success(response?.message || "Registration successful!");
       setTimeout(() => navigate("/"), 1500);
-    } catch (error) {
+    }catch(error) {
       toast.error(error.message);
-      console.log("Residtration Error: ", error);
+      console.log("Registration Error: ", error);
     }
   };
 
