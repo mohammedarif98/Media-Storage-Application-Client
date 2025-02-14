@@ -14,14 +14,14 @@ const Sidebar = ({ isOpen }) => {
       }`}
     >
       <div className="flex justify-center p-4 ">
-        <Link to="/admin/dashboard" className="text-xl font-rubik-wet-paint">
-          DevFlow Admin
+        <Link to="/home" className="text-xl font-bold capitalize">
+          Media Storage
         </Link>
       </div>
       <ul className="mt-10 space-y-[1px]">
         <li className="mb-4">
           <NavLink
-            to="/admin/dashboard"
+            to="/home"
             className={({ isActive }) =>
               `gap-x-4 font-semibold block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
                 isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""

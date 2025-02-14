@@ -5,11 +5,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../../utils/validations/user/loginValidation";
 import { loginUser } from "../../services/authServices";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/slices/userSlice";
 
 
 
 const LoginForm = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
     register,
@@ -18,11 +21,12 @@ const LoginForm = () => {
   } = useForm({ resolver: yupResolver(loginSchema) });
 
   const onSubmit = async (data) => {
-    try {
+    try{
       const response = await loginUser(data);
+      dispatch(login(response.data.user));
       toast.success(response?.message || "Login successful!");
-      setTimeout(() => navigate("/home"), 1500);
-    } catch (error) {
+      navigate("/home");
+    }catch(error) {
       toast.error(error.message);
       console.log("Login Error: ", error);
     }

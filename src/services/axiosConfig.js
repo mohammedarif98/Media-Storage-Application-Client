@@ -19,9 +19,7 @@ export const apiRequest = async(config) => {
         console.log(response);
         return response.data;
     }catch( error ){
-        const errorMessage = error.response?.data?.message || 
-                        error.message || 
-                        "An unexpected error occurred";
+        const errorMessage = error.response?.data?.message || error.message || "An unexpected error occurred";
     throw new Error(errorMessage);
     }
 };
