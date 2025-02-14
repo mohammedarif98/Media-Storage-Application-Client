@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AiOutlineDashboard } from 'react-icons/ai';
 import { Link, NavLink } from 'react-router-dom';
 
 
 const Sidebar = ({ isOpen }) => {
-
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <div
@@ -35,7 +33,7 @@ const Sidebar = ({ isOpen }) => {
 
         <li className="">
           <NavLink
-            to=""
+            to="/home2"
             className={({ isActive }) =>
               `gap-x-4 font-normal block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
                 isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""
@@ -49,7 +47,7 @@ const Sidebar = ({ isOpen }) => {
 
         <li className="">
           <NavLink
-            to=""
+            to="/home4"
             className={({ isActive }) =>
               `gap-x-4 font-normal block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
                 isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""

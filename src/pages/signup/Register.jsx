@@ -10,7 +10,7 @@ const Register = () => {
         {/* ------------Left Side------------ */}
         <div className="hidden md:flex items-center justify-center w-full md:w-1/2">
           <p className="text-3xl lg:text-4xl text-white font-bold text-center font-rubik-wet-paint">
-            Welcome To DevFlow
+            Welcome To Media Storage
           </p>
         </div>
 
@@ -24,5 +24,6 @@ const Register = () => {
     </div>
   );
 };
+
 
 export default Register;
