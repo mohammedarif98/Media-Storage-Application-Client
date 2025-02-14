@@ -1,14 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import UserRoutes from './routes/AppRoutes'
+import './index.css'
 
 
 function App() {
-
   return (
     <>
-      <p className="text-3xl font-bold text-cyan-600">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Router>
+          <Routes>
+            <Route path='/*' element={ <UserRoutes /> } />
+          </Routes>
+      </Router>
     </>
   )
 }
 
-export default App
+
+export default App;
