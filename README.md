@@ -32,5 +32,4 @@
 
 ## Setup Instructions
 - github repository: https://github.com/your-username/media-capture-storage-app.git
-- Clone the repository git clone https://github.com/your-username/media-capture-storage-app.git
    
