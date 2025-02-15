@@ -1,9 +1,17 @@
-import React from 'react'
-import { AiOutlineDashboard } from 'react-icons/ai';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { AiOutlineDashboard } from "react-icons/ai";
+import { Link, NavLink } from "react-router-dom";
+import {
+  MdKeyboardArrowDown,
+  MdKeyboardArrowUp,
+} from "react-icons/md";
+import { IoListOutline } from "react-icons/io5";
+import { GrBlog } from "react-icons/gr";
+
 
 
 const Sidebar = ({ isOpen }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <div
@@ -11,7 +19,7 @@ const Sidebar = ({ isOpen }) => {
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <div className="flex justify-center p-4 ">
+      <div className="flex justify-center p-4">
         <Link to="/home" className="text-xl font-bold capitalize">
           Media Storage
         </Link>
@@ -22,7 +30,9 @@ const Sidebar = ({ isOpen }) => {
             to="/home"
             className={({ isActive }) =>
               `gap-x-4 font-semibold block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
-                isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""
+                isActive
+                  ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900"
+                  : ""
               }`
             }
           >
@@ -31,36 +41,61 @@ const Sidebar = ({ isOpen }) => {
           </NavLink>
         </li>
 
-        <li className="">
-          <NavLink
-            to="/home2"
-            className={({ isActive }) =>
-              `gap-x-4 font-normal block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
-                isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""
-              }`
-            }
+        <li>
+          <div
+            className="flex items-center justify-between px-5 py-3 cursor-pointer hover:bg-blue-100 hover:border-r-2 hover:border-r-blue-900"
+            onClick={() => setIsDropdownOpen((prev) => !prev)}
           >
-            {/* <FaUsersLine className="text-xl" /> */}
-            vedios
-          </NavLink>
-        </li>
+            <div className="flex items-center gap-x-4">
+              <GrBlog className="text-xl" />
+              <span>Media Collection</span>
+            </div>
+            {isDropdownOpen ? (
+              <MdKeyboardArrowUp className="text-lg" />
+            ) : (
+              <MdKeyboardArrowDown className="text-lg" />
+            )}
+          </div>
 
-        <li className="">
-          <NavLink
-            to="/home4"
-            className={({ isActive }) =>
-              `gap-x-4 font-normal block py-3 px-5 hover:bg-blue-100 flex items-center space-x-2 ${
-                isActive ? "bg-blue-200 text-blue-900 border-r-2 border-r-blue-900" : ""
-              }`
-            }
-          >
-            {/* <FaUsersLine className="text-xl" /> */}
-            Images
-          </NavLink>
+          {/* Dropdown Items */}
+          {isDropdownOpen && (
+            <ul className="ml-8 space-y-1 px-5">
+              <li>
+                <NavLink
+                  to="/image-collection"
+                  className={({ isActive }) =>
+                    `flex py-2 px-3 hover:bg-blue-100 gap-x-2 justify-start items-center relative ${
+                      isActive
+                        ? "bg-blue-100 text-blue-900 border-l-2 border-l-blue-900 child-active"
+                        : ""
+                    }`
+                  }
+                >
+                  <IoListOutline className="text-xl text-black" />
+                  Image
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/vedio-collection"
+                  className={({ isActive }) =>
+                    `flex py-2 px-3 hover:bg-blue-100 gap-x-2 justify-start items-center relative ${
+                      isActive
+                        ? "bg-blue-100 text-blue-900 border-l-2 border-l-blue-900 child-active"
+                        : ""
+                    }`
+                  }
+                >
+                  <IoListOutline className="text-xl text-black" />
+                  Video
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </li>
       </ul>
 
-      {/* Inline Styles for Arrows */}
+      {/* Inline Styles for Active Indicator */}
       <style>{`
         .child-active {
           position: relative;
@@ -69,17 +104,17 @@ const Sidebar = ({ isOpen }) => {
           content: '';
           position: absolute;
           top: 50%;
-          left: -10px; /* Adjust to align with parent arrow */
+          left: -10px;
           transform: translateY(-50%);
           width: 0;
           height: 0;
           border-top: 6px solid transparent;
           border-bottom: 6px solid transparent;
-          border-left: 6px solid #1e40af; /* Arrowhead color */
+          border-left: 6px solid #1e40af;
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

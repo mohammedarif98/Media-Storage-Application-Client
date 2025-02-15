@@ -45,6 +45,28 @@ export const logoutUser = async() => {
 }
 
 
+export const getUserProfile = async () => {
+  try {
+      const response = await apiRequest({
+          url: '/api/auth/user/user-profile',
+          method: "GET",
+      });
+
+      const { user, mediaStats } = response.data; 
+      return {
+          user,
+          totalMedia: mediaStats?.totalMedia || 0,
+          totalImages: mediaStats?.totalImages || 0,
+          totalVideos: mediaStats?.totalVideos || 0,
+      };
+  } catch (error) {
+      const message = error.response?.data?.message || error.message || "Failed to fetch user data.";
+      throw new Error(message);
+  }
+};
+
+
+
 export const getDashboard = async() => {
     try{
       const response = await apiRequest({
