@@ -30,6 +30,11 @@
 
 ---
 
-## Setup Instructions
-- github repository: https://github.com/your-username/media-capture-storage-app.git
+## Project installation
+- **clone github repository**: https://github.com/your-username/media-capture-storage-app.git
+- **install dependencies**: npm install. 
+- **frontend start**: npm run dev .
+- **create .env file**: .env.
+   - VITE_API_BASE_URL=http://localhost:3000
+ 
    
