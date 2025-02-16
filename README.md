@@ -31,7 +31,7 @@
 ---
 
 ## Project installation
-- **clone github repository**: https://github.com/your-username/media-capture-storage-app.git
+- **clone github repository**:  https://github.com/mohammedarif98/Media-Storage-Application-Client.git
 - **install dependencies**: npm install. 
 - **frontend start**: npm run dev .
 - **create .env file**: .env.
