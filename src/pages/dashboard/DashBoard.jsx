@@ -10,7 +10,7 @@ const DashBoard = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const fileInputRef = useRef();
-  const [user, setUser] = useState(null); // Store user info
+  const [user, setUser] = useState(null); 
   const [mediaData, setMediaData] = useState({
     totalMedia: 0,
     totalImages: 0,
@@ -25,7 +25,7 @@ const DashBoard = () => {
 
     if (selectedFile && selectedFile.size > maxSize) {
       setError('File size exceeds 100MB limit.');
-      e.target.value = ''; // Clear the file input
+      e.target.value = ''; 
       return;
     }
 
